@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg-green-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(240 253 244/var(--tw-bg-opacity))
+}
+
+.bg-red-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 242 242/var(--tw-bg-opacity))
+}
+
+.bg-sky-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(240 249 255/var(--tw-bg-opacity))
+}
+
+.bg-yellow-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 252 232/var(--tw-bg-opacity))
+}
+
+.wrap {
+    overflow-wrap: break-word;
+}
+
+.language-shell{
+    overflow: hidden;
+    width: 100%;
+}
+
+.hh-guide {
+    border-bottom: 2px dotted #ccc;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+
+ol.custom-steps {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+ol.custom-steps li {
+    counter-increment: step-counter;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+ol.custom-steps li::before {
+    content: counter(step-counter);
+    background-color: #e6edf7;
+    color: #002c5f;
+    border-radius: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 15px;
+    font-size: 12px;
+}
+
+ol.custom-steps li p {
+    margin: 0;
+    color: #3a3a3a;
+}
