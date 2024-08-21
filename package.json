@@ -1,5 +1,5 @@
 {
-  "name": "kapiti.nextjs.demo",
+  "name": "react.nextjs.knowledgebase",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "@tailwindcss/typography": "^0.5.13",
     "next": "14.2.4",
     "react": "^18",
+    "react-code-blocks": "^0.1.6",
     "react-dom": "^18",
     "socket.io-client": "^4.7.5"
   },

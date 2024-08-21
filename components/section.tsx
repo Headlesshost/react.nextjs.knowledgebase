@@ -2,7 +2,7 @@ import React from "react";
 import HeaderLink from "./sections/headerLink";
 import TextBlockWithHeader from "./sections/textBlockWithHeader";
 import InfoBox from "./sections/infoBox";
-import CodeBlock from "./sections/codeBlock";
+import CodeDisplay from "./sections/codeDisplay";
 import ActionBox from "./sections/actionBox";
 import NavLink from "./sections/navLink";
 import CmsImage from "./sections/cmsImage";
@@ -20,7 +20,7 @@ interface SectionProps {
 const sections: { [key: string]: React.FC<any> } = {
   PAGE_HEADER: PageHeader,
   HEADER_LINK: HeaderLink,
-  CODE_BLOCK: CodeBlock,
+  CODE_BLOCK: CodeDisplay,
   TEXT_BLOCK_WITH_HEADER: TextBlockWithHeader,
   TEXT_BLOCK: TextBlock,
   INFO_BOX: InfoBox,
