@@ -16,7 +16,7 @@ const AuthorTable: React.FC<AuthorTableProps> = async ({ section, instanceId }) 
   const authors = await getAuthors(instanceId);
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto mb-12">
       <div className="inline-block min-w-full align-middle">
         <table className="min-w-full divide-y divide-gray-300">
           <thead>

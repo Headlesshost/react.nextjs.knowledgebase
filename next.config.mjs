@@ -15,7 +15,7 @@ const nextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' https://example.com;", // Adjust as needed
+            value: "frame-ancestors 'self' https://react-nextjs-knowledgebase-git-fac832-warren-cheethams-projects.vercel.app;", // Adjust as needed
           },
         ],
       },

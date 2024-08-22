@@ -5,7 +5,8 @@ export interface Section {
   content: any;
 }
 
-export interface HeaderLinkSection extends Section {
+export interface Heading {
+  title: string;
   headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "default" | undefined;
 }
 

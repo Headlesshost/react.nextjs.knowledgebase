@@ -1,13 +1,18 @@
 import React from "react";
-import { HeaderLinkSection } from "@/app/lib/types";
+import { Heading, Section } from "@/app/lib/types";
+
+interface TextBlockWithHeaderSection extends Section {
+  heading: Heading;
+  content: string;
+}
 
 interface TextBlockWithHeaderProps {
-  section: HeaderLinkSection;
+  section: TextBlockWithHeaderSection;
 }
 
 const TextBlockWithHeader: React.FC<TextBlockWithHeaderProps> = ({ section }) => {
-  const { id, title, headingType } = section;
-  const Tag = headingType !== "default" ? headingType : "h2";
+  const { id, heading, content } = section;
+  const { headingType, title } = heading;
   const className = headingType === "h1" ? "text-3xl" : headingType === "h2" ? "text-2xl" : headingType === "h3" ? "text-xl" : headingType === "h4" ? "text-lg" : "text-base";
 
   return (
@@ -15,7 +20,7 @@ const TextBlockWithHeader: React.FC<TextBlockWithHeaderProps> = ({ section }) =>
       <div className={`${className} font-bold my-3`} id={id}>
         {title}
       </div>
-      <div className="whitespace-pre-wrap">{section.content}</div>
+      <div className="whitespace-pre-wrap">{content}</div>
     </div>
   );
 };

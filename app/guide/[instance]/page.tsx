@@ -5,7 +5,7 @@ import OnThisPage from "@/components/onThisPage";
 export default async function Guide({ params }: { params: { instance: string } }) {
   const guide = await getGuide(params.instance);
   const onThisPage = guide?.content?.sections?.map((section: any) => ({
-    title: section.title,
+    title: section?._meta?.name,
     headingType: "h2",
     id: section.id,
   }));
