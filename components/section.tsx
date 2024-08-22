@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderLink from "./sections/headerLink";
 import TextBlockWithHeader from "./sections/textBlockWithHeader";
 import InfoBox from "./sections/infoBox";
 import CodeDisplay from "./sections/codeDisplay";
@@ -19,7 +18,6 @@ interface SectionProps {
 
 const sections: { [key: string]: React.FC<any> } = {
   PAGE_HEADER: PageHeader,
-  HEADER_LINK: HeaderLink,
   CODE_BLOCK: CodeDisplay,
   TEXT_BLOCK_WITH_HEADER: TextBlockWithHeader,
   TEXT_BLOCK: TextBlock,
