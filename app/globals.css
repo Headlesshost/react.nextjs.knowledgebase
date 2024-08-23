@@ -51,6 +51,7 @@ ol.custom-steps li {
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
+    /* Aligns items to the top */
 }
 
 ol.custom-steps li::before {
@@ -58,17 +59,24 @@ ol.custom-steps li::before {
     background-color: #e6edf7;
     color: #002c5f;
     border-radius: 50%;
-    display: inline-block;
-    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
     height: 30px;
-    line-height: 30px;
     text-align: center;
     margin-right: 15px;
     font-size: 12px;
+    flex-shrink: 0;
+    /* Prevents disc from shrinking */
+    align-self: flex-start;
+    /* Ensures the disc stays at the top */
 }
 
 ol.custom-steps li p {
     margin: 0;
+    flex-grow: 1;
+    /* Allows text to occupy the remaining space */
 }
 
 .jWnJto {
