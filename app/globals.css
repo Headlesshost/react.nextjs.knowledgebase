@@ -59,7 +59,7 @@ ol.custom-steps li::before {
     color: #002c5f;
     border-radius: 50%;
     display: inline-block;
-    width: 30px;
+    width: 70px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -69,7 +69,6 @@ ol.custom-steps li::before {
 
 ol.custom-steps li p {
     margin: 0;
-    color: #3a3a3a;
 }
 
 .jWnJto {

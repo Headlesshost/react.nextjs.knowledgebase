@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { Section } from "@/app/lib/types";
+import { NavigationLink, Section } from "@/app/lib/types";
 
 interface ActionBoxSection extends Section {
-  link: string | undefined;
-  linkLabel: string | undefined;
+  link: NavigationLink;
 }
 
 interface ActionBoxProps {
@@ -11,7 +10,8 @@ interface ActionBoxProps {
 }
 
 const ActionBox: React.FC<ActionBoxProps> = ({ section }) => {
-  const { link, linkLabel, title, content } = section;
+  const { link, title, content } = section;
+  const linkLabel = link?.title;
 
   return (
     <div className="mb-12">
@@ -19,8 +19,8 @@ const ActionBox: React.FC<ActionBoxProps> = ({ section }) => {
         <div className="relative">
           <h2 className="font-display font-bold text-2xl text-white mt-2">{title}</h2>
           <p className="mt-3 text-base text-slate-100 leading-relaxed max-w-2xl whitespace-pre-wrap">{content}</p>
-          {linkLabel && link && (
-            <Link href={link}>
+          {linkLabel && (
+            <Link href={link.slug} target={link.target}>
               <div className="inline-block mt-6 rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold font-display text-white group-hover:bg-sky-600">{linkLabel}</div>
             </Link>
           )}
