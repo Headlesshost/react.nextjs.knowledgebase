@@ -10,7 +10,7 @@ export interface Heading {
   headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "default" | undefined;
 }
 
-export interface Link {
+export interface NavigationLink {
   title: string;
   slug: string;
   target: string;
@@ -18,7 +18,7 @@ export interface Link {
 
 export interface LinkGroup {
   group: string;
-  links: Link[];
+  links: NavigationLink[];
 }
 
 export interface Globals {
@@ -28,7 +28,7 @@ export interface Globals {
 export interface Header {
   smallLogo: ImageDetails;
   largeLogo: ImageDetails;
-  links: Link[];
+  links: NavigationLink[];
 }
 
 export interface PagedResponse<T> {
