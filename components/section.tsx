@@ -10,6 +10,7 @@ import PageHeader from "./sections/pageHeader";
 import TextBlock from "./sections/textBlock";
 import OrderedList from "./sections/orderedList";
 import AuthorTable from "./sections/authorTable";
+import StandardHeading from "./sections/standardHeading";
 
 interface SectionProps {
   section: any;
@@ -28,6 +29,7 @@ const sections: { [key: string]: React.FC<any> } = {
   VIDEO: Video,
   ORDERED_LIST: OrderedList,
   AUTHOR_TABLE: AuthorTable,
+  STANDARD_HEADING: StandardHeading,
 };
 
 const Section: React.FC<SectionProps> = ({ section, instanceId }) => {

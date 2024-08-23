@@ -1,5 +1,6 @@
 import React from "react";
 import { Heading, Section } from "@/app/lib/types";
+import StandardHeading from "./standardHeading";
 
 interface TextBlockWithHeaderSection extends Section {
   heading: Heading;
@@ -11,15 +12,11 @@ interface TextBlockWithHeaderProps {
 }
 
 const TextBlockWithHeader: React.FC<TextBlockWithHeaderProps> = ({ section }) => {
-  const { id, heading, content } = section;
-  const { headingType, title } = heading;
-  const className = headingType === "h1" ? "text-3xl" : headingType === "h2" ? "text-2xl" : headingType === "h3" ? "text-xl" : headingType === "h4" ? "text-lg" : "text-base";
+  const { content } = section;
 
   return (
     <div className="mb-10">
-      <div className={`${className} font-bold my-3`} id={id}>
-        {title}
-      </div>
+      <StandardHeading section={section} />
       <div className="whitespace-pre-wrap">{content}</div>
     </div>
   );

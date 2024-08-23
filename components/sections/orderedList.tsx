@@ -16,7 +16,9 @@ const OrderedList: React.FC<OrderedListProps> = ({ section }) => {
   return (
     <ol className="custom-steps">
       {items.map((i) => (
-        <li key={i}>{i}</li>
+        <li className="text-md text-slate-600" key={i}>
+          {i}
+        </li>
       ))}
     </ol>
   );
