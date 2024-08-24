@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Section } from "@/app/lib/types";
+import { Heading, Section } from "@/app/lib/types";
 
 interface HeadingSection extends Section {
-  headingType: string;
+  heading: Heading;
 }
 
 interface Page {
@@ -19,11 +19,11 @@ const OnThisPage: React.FC<OnThisPageProps> = ({ page }) => {
   let parentHeading = { title: "", link: "", children: [] as { title: string; link: string }[] };
 
   for (const section of sections) {
-    if (section.headingType === "h2") {
-      parentHeading = { title: section.title || "", link: section.id, children: [] };
+    if (section.heading?.headingType === "h2") {
+      parentHeading = { title: section.heading.title || "", link: section.id, children: [] };
       links.push(parentHeading);
-    } else if (section.headingType === "h3" && parentHeading) {
-      parentHeading.children.push({ title: section.title ?? "", link: section.id });
+    } else if (section.heading?.headingType === "h3" && parentHeading) {
+      parentHeading.children.push({ title: section.heading.title ?? "", link: section.id });
     }
   }
 

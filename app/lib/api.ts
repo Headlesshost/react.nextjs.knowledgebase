@@ -24,7 +24,7 @@ export async function getAuthors(instanceId: string): Promise<PagedResponse<Auth
 }
 
 export async function getGuide(instanceId: string) {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/guide${draftSiteExt(instanceId)}`, { next: { tags: ["site", "guide"] } });
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/guide`, { next: { tags: ["site", "guide"] } });
   if (res.status !== 200) throw new Error("Failed to fetch guide");
   return res.json();
 }
