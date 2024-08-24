@@ -11,6 +11,7 @@ import TextBlock from "./sections/textBlock";
 import OrderedList from "./sections/orderedList";
 import AuthorTable from "./sections/authorTable";
 import StandardHeading from "./sections/standardHeading";
+import ContactForm from "./sections/contactForm";
 
 interface SectionProps {
   section: any;
@@ -30,6 +31,7 @@ const sections: { [key: string]: React.FC<any> } = {
   ORDERED_LIST: OrderedList,
   AUTHOR_TABLE: AuthorTable,
   STANDARD_HEADING: StandardHeading,
+  CONTACT_FORM: ContactForm,
 };
 
 const Section: React.FC<SectionProps> = ({ section, instanceId }) => {
@@ -39,7 +41,7 @@ const Section: React.FC<SectionProps> = ({ section, instanceId }) => {
     return null;
   }
 
-  return <SectionComponent section={section} instanceId={instanceId} />;
+  return <SectionComponent section={section} instanceId={instanceId} siteId={process.env.HEADLESSHOST_SITEID} />;
 };
 
 export default Section;
