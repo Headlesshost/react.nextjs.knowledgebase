@@ -11,11 +11,11 @@ const nextConfig = {
         headers: [
           {
             key: "X-Frame-Options",
-            value: "ALLOWALL", // or you can omit this header entirely
+            value: "ALLOWALL",
           },
           {
             key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' https://react-nextjs-knowledgebase-git-fac832-warren-cheethams-projects.vercel.app;", // Adjust as needed
+            value: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
           },
         ],
       },

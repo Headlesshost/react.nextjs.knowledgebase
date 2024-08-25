@@ -9,16 +9,30 @@ export async function getClientConfig(): Promise<{ siteId: string }> {
 }
 
 async function getInstanceUrl(instanceId: string) {
-  const siteInstance = instanceId && instanceId !== ProductionSlug ? `/instance/${instanceId}` : "";
-  return `https://api.headlesshost.com/sites/${process.env.HEADLESSHOST_SITEID}${siteInstance}`;
-}
+  const res = await fetch(`https://api.headlesshost.com/sites/${process.env.HEADLESSHOST_SITEID}/list`, { next: { tags: ["site", "list"] } });
+  if (res.status !== 200) throw new Error("Failed to fetch site list");
+  const siteList = await res.json();
 
-function draftSiteExt(instanceId: string) {
-  return instanceId === ProductionSlug && process.env.NODE_ENV !== "production" ? "/draft" : "";
+  if (!siteList.publishedSites || !siteList.stagingSites) {
+    throw new Error("Invalid site list response", siteList);
+  }
+
+  if (instanceId === ProductionSlug && siteList?.publishedSites?.length > 0) {
+    return `https://api.headlesshost.com/sites/${process.env.HEADLESSHOST_SITEID}`;
+  }
+
+  const siteIds = [...siteList?.publishedSites?.map((site: any) => site.id), ...siteList?.stagingSites?.map((site: any) => site.id)];
+
+  if (siteIds.includes(instanceId)) {
+    return `https://api.headlesshost.com/sites/${process.env.HEADLESSHOST_SITEID}/instance/${instanceId}`;
+  }
+
+  const headStaging = siteList?.stagingSites?.find((site: any) => site.isHead);
+  return `https://api.headlesshost.com/sites/${process.env.HEADLESSHOST_SITEID}/instance/${headStaging.id}`;
 }
 
 export async function getAuthors(instanceId: string): Promise<PagedResponse<Author>> {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/catalogs/AUTHORS${draftSiteExt(instanceId)}`, { next: { tags: ["site", "catalogs", "authors"] } });
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/catalogs/AUTHORS`, { next: { tags: ["site", "catalogs", "authors"] } });
   if (res.status !== 200) throw new Error("Failed to fetch authors");
   return res.json();
 }
@@ -30,26 +44,25 @@ export async function getGuide(instanceId: string) {
 }
 
 export async function getMap(instanceId: string) {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/map${draftSiteExt(instanceId)}`, { next: { tags: ["site", "map"] } });
-  console.log(res);
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/map`, { next: { tags: ["site", "map"] } });
   if (res.status !== 200) throw new Error("Failed to fetch map");
   return res.json();
 }
 
 export async function getCommon(instanceId: string) {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/common${draftSiteExt(instanceId)}`, { next: { tags: ["site", "common"] } });
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/common`, { next: { tags: ["site", "common"] } });
   if (res.status !== 200) throw new Error("Failed to fetch common");
   return res.json();
 }
 
 export async function getPage(page: string, instanceId: string) {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/pages/${page}${draftSiteExt(instanceId)}`, { next: { tags: ["site", "pages", page] } });
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/pages/${page}`, { next: { tags: ["site", "pages", page] } });
   if (res.status !== 200) throw new Error("Failed to fetch page");
   return res.json();
 }
 
 export async function getSearchResults(term: string, instanceId: string) {
-  const res = await fetch(`${await getInstanceUrl(instanceId)}/search${draftSiteExt(instanceId)}?text=${encodeURIComponent(term)}`, { cache: "no-store" });
+  const res = await fetch(`${await getInstanceUrl(instanceId)}/search?text=${encodeURIComponent(term)}`, { cache: "no-store" });
   if (res.status !== 200) throw new Error("Failed to execute search");
   return res.json();
 }
