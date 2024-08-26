@@ -15,7 +15,7 @@ const TextBlockWithHeader: React.FC<TextBlockWithHeaderProps> = ({ section }) =>
   const { content } = section;
 
   return (
-    <div className="mb-10">
+    <div className="mb-16">
       <StandardHeading section={section} />
       <div className="whitespace-pre-wrap">{content}</div>
     </div>

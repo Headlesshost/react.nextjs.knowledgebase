@@ -28,7 +28,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ section, siteId }) => {
     }
   }
   return (
-    <div className="mb-12">
+    <div className="mb-16">
       <div className="text-3xl mb-6">{title}</div>
       <p>{introduction}</p>
 
@@ -41,7 +41,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ section, siteId }) => {
               <label className="block tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
                 First Name
               </label>
-              <input required className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="Firstname" type="text" placeholder="First name" />
+              <input required className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="Firstname" type="text" placeholder="First name" />
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label className="block tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">

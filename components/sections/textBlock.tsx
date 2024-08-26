@@ -6,7 +6,7 @@ interface TextBlockProps {
 }
 
 const TextBlock: React.FC<TextBlockProps> = ({ section }) => {
-  return <div className="whitespace-pre-wrap mb-6">{section.content}</div>;
+  return <div className="whitespace-pre-wrap mb-16">{section.content}</div>;
 };
 
 export default TextBlock;

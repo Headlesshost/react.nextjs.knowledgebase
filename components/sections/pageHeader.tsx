@@ -22,7 +22,7 @@ const PageHeader: React.FC<PageHeaderProps> = async ({ section, instanceId }) =>
   const author = authors?.result?.find((a) => a.cid === authorSelect);
 
   return (
-    <header className="mb-12">
+    <header className="mb-16">
       <p className="font-display text-sm font-semibold text-sky-500 mb-1">{parent}</p>
       <h1 className="font-display text-3xl tracking-tight text-slate-900 font-semibold">{title}</h1>
       <div className="flex space-x-4 mt-4">
