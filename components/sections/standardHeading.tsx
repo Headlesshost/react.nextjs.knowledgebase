@@ -15,7 +15,7 @@ const StandardHeading: React.FC<StandardHeadingProps> = ({ section }) => {
   const className = headingType === "h1" ? "text-3xl" : headingType === "h2" ? "text-2xl" : headingType === "h3" ? "text-xl" : headingType === "h4" ? "text-lg" : "text-base";
 
   return (
-    <div className={`${className} font-bold my-3`} id={id}>
+    <div className={`${className} font-bold mb-8`} id={id}>
       {title}
     </div>
   );

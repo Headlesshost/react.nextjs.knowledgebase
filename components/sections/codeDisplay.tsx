@@ -15,7 +15,7 @@ interface CodeBlockProps {
 
 const CodeDisplay: React.FC<CodeBlockProps> = ({ section }) => {
   return (
-    <div className="mb-16">
+    <div className="mb-14">
       <CopyBlock text={section?.code} language={section?.language} showLineNumbers={section?.showLineNumbers} theme={dracula} codeBlock={true} />
     </div>
   );

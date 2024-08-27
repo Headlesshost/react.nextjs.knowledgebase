@@ -28,7 +28,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ section, siteId }) => {
     }
   }
   return (
-    <div className="mb-16">
+    <div className="mb-14">
       <div className="text-3xl mb-6">{title}</div>
       <p>{introduction}</p>
 

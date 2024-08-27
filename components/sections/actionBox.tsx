@@ -14,7 +14,7 @@ const ActionBox: React.FC<ActionBoxProps> = ({ section }) => {
   const linkLabel = link?.title;
 
   return (
-    <div className="mb-16">
+    <div className="mb-14">
       <div className="md:col-span-2 relative rounded-xl p-8 shadow-xl shadow-slate-200 bg-sky-950 group overflow-hidden" id={section.id}>
         <div className="relative">
           <h2 className="font-display font-bold text-2xl text-white mt-2">{title}</h2>
