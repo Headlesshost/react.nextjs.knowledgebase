@@ -1,5 +1,4 @@
 import { Section } from "@/app/lib/types";
-import Link from "next/link";
 
 interface OrderedList extends Section {
   items: string[];
