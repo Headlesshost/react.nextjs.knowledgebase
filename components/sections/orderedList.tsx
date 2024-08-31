@@ -1,5 +1,4 @@
 import { Section } from "@/app/lib/types";
-import Link from "next/link";
 
 interface OrderedList extends Section {
   items: string[];
@@ -14,7 +13,7 @@ const OrderedList: React.FC<OrderedListProps> = ({ section }) => {
   const { items } = section;
 
   return (
-    <ol className="custom-steps mb-16">
+    <ol className="custom-steps mb-14">
       {items.map((i) => (
         <li className="text-md text-slate-600" key={i}>
           {i}

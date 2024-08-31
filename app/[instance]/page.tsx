@@ -7,5 +7,5 @@ export default async function Page({ params }: { params: { instance: string } })
   if (hasPages) {
     redirect(`${params.instance}/${map.content?.pages[0]?.identifier}`);
   }
-  return <div>Nothing here</div>;
+  return <div>There are currently no pages in this site.</div>;
 }
