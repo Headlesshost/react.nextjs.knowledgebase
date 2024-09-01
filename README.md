@@ -2,7 +2,7 @@
 
 This template can be used to create a simple documentation website using Headlesshost and Next.js The sample comes with a number of pre-built components but can be easily extended with your own custom components.
 
-Open [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro) for a live demo.
+Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a> for a live demo.
 
 <img src="./public/home.png" style="max-width:900px" />
 
@@ -25,11 +25,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide) for a list of current components.
+Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide</a> for a list of current components.
 
-For a guide on how to implement your own components click here [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections)
+For a guide on how to implement your own components click here <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections</a>
 
-For a guide on how to connect your own content click here [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro)
+For a guide on how to connect your own content click here <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a>
 
 ## Learn More about Next.js
 
