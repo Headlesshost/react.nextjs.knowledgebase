@@ -1,26 +1,37 @@
+## Headlesshost Knowledgebase - Documentation Template
+
+This template can be used to create a simple documentation website using Headlesshost and Next.js The sample comes with a number of pre-built components but can be easily extended with your own custom components.
+
+Open [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro) for a live demo.
+
+<img src="./public/home.png" style="max-width:900px" />
+
+<br/>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, install packages and run the development server:
 
 ```bash
+# Clone this repo to your local machine
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide) for a list of current components.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For a guide on how to implement your own components click here [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections)
 
-## Learn More
+For a guide on how to connect your own content click here [https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro](https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro)
+
+## Learn More about Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
