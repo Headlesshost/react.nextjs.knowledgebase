@@ -12,7 +12,7 @@ Vercel provides pre-production features that couple perfectly with Headlesshost 
 
 Click on the button below to fully automate your deployment.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase&env=HEADLESSHOST_SITEID&envDescription=Key%20needed%20to%20connect%20to%20your%20own%20Headlesshost%20repository&envLink=https%3A%2F%2Freact-nextjs-knowledgebase.vercel.app%2Fknowledgebase%2Fgs_intro&project-name=knowledgebase&repository-name=knowledgebase&demo-title=Headlesshost%20Knowledgebase&demo-description=A%20Next.js%20knowledgebase%20backed%20by%20Headlesshost%20CMS&demo-url=https%3A%2F%2Freact-nextjs-knowledgebase.vercel.app%2Fknowledgebase%2Fgs_intro&demo-image=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase%2Fraw%2Fmaster%2Fpublic%2Fhome.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase&project-name=knowledgebase&repository-name=knowledgebase&demo-title=Headlesshost%20Knowledgebase&demo-description=A%20Next.js%20knowledgebase%20backed%20by%20Headlesshost%20CMS&demo-url=https%3A%2F%2Freact-nextjs-knowledgebase.vercel.app%2Fknowledgebase%2Fgs_intro&demo-image=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase%2Fraw%2Fmaster%2Fpublic%2Fhome.png)
 
 ## Live Demo
 
