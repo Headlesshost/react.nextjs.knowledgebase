@@ -1,18 +1,39 @@
 ## Headlesshost Knowledgebase - Documentation Template
 
-This template can be used to create a simple documentation website using Headlesshost and Next.js The sample comes with a number of pre-built components but can be easily extended with your own custom components.
-
-Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a> for a live demo.
-
-<img src="./public/home.png" style="max-width:900px" />
-
-<br/>
+This template can be used to create a simple documentation website using Headlesshost and Next.js The sample comes with a number of pre-built components but can be easily extended with your own custom designs.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Deploy on Vercel
 
-First, install packages and run the development server:
+The best way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Vercel provides pre-production features that couple perfectly with Headlesshost staging sites. These features enable users to preview content changes in real time and collaborate with the vercel inline commenting tools.
+
+Click on the button below to fully automate your deployment.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase&env=HEADLESSHOST_SITEID&envDescription=Key%20needed%20to%20connect%20to%20your%20own%20Headlesshost%20repository&envLink=https%3A%2F%2Freact-nextjs-knowledgebase.vercel.app%2Fknowledgebase%2Fgs_intro&project-name=knowledgebase&repository-name=knowledgebase&demo-title=Headlesshost%20Knowledgebase&demo-description=A%20Next.js%20knowledgebase%20backed%20by%20Headlesshost%20CMS&demo-url=https%3A%2F%2Freact-nextjs-knowledgebase.vercel.app%2Fknowledgebase%2Fgs_intro&demo-image=https%3A%2F%2Fgithub.com%2FHeadlesshost%2Freact.nextjs.knowledgebase%2Fraw%2Fmaster%2Fpublic%2Fhome.png)
+
+## Live Demo
+
+Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a> for a live demo.
+
+<a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide" target="_blank">Click here</a> for a list of current components.
+
+For a guide on how to implement your own components <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections" target="_blank">click here</a>
+
+For a guide on how to connect your own content <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">click here </a>
+
+<a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">
+<img src="./public/home.png" style="max-width:900px" />
+</a>
+<br/>
+
+## Deploy Locally
+
+Alternatively you can deploy locally.
+
+First, install packages and then run the development server:
 
 ```bash
 # Clone this repo to your local machine
@@ -24,24 +45,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide</a> for a list of current components.
-
-For a guide on how to implement your own components click here <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/hh_sections</a>
-
-For a guide on how to connect your own content click here <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a>
-
-## Learn More about Next.js
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
