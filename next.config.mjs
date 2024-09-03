@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["assets.headlesshost.com", "localhost"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "assets.headlesshost.com",
+      },
+    ],
   },
   async headers() {
     return [
@@ -16,10 +21,6 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",
-          },
-          {
-            key: "x-vercel-protection-bypass",
-            value: "qmWa32MAkgYFKRcHAhGrCYvsZIXC3Gsg",
           },
         ],
       },
