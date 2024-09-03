@@ -16,7 +16,7 @@ Click on the button below to fully automate your deployment.
 
 ## Live Demo
 
-Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro</a> for a live demo.
+Open <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/gs_intro" target="_blank">https://react-nextjs-knowledgebase.vercel.app</a> for a live demo.
 
 <a href="https://react-nextjs-knowledgebase.vercel.app/knowledgebase/guide" target="_blank">Click here</a> for a list of current components.
 
