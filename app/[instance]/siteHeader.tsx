@@ -61,8 +61,8 @@ export default function SiteHeader({ common, instanceId, clientConfig }: HeaderP
               </svg>
             </button>
             <a aria-label="Home page" href="/">
-              {largeLogo && largeLogo.url ? <Image className="h-7 hidden sm:block" src={largeLogo.url} alt={largeLogo.alt || "Knowledgebase"} priority width={largeLogo.width} height={largeLogo.height} /> : <Image className="h-7 hidden sm:block" src="/logo.png" alt="Knowledgebase" priority width={257} height={30} />}
-              {smallLogo && smallLogo.url ? <Image className="h-7 sm:hidden" src={smallLogo.url} alt={smallLogo.alt || "Knowledgebase"} priority width={smallLogo.width} height={smallLogo.height} /> : <Image className="h-7 sm:hidden" src="/logo-sm.png" alt="Knowledgebase" priority width={30} height={22} />}
+              {largeLogo && largeLogo.url ? <Image className="h-7 hidden sm:block" src={largeLogo.url} alt={"Knowledgebase"} priority width={largeLogo.width} height={largeLogo.height} /> : <Image className="h-7 hidden sm:block" src="/logo.png" alt="Knowledgebase" priority width={257} height={30} />}
+              {smallLogo && smallLogo.url ? <Image className="h-7 sm:hidden" src={smallLogo.url} alt={"Knowledgebase"} priority width={smallLogo.width} height={smallLogo.height} /> : <Image className="h-7 sm:hidden" src="/logo-sm.png" alt="Knowledgebase" priority width={30} height={22} />}
             </a>
             <nav className="hidden lg:flex lg:space-x-8 lg:ml-12 xl:ml-16">
               {headerLinks.map((link) =>
