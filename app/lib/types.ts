@@ -54,7 +54,6 @@ export interface AuthorContent {
 
 export interface ImageDetails {
   url: string;
-  alt: string;
   width: number;
   height: number;
   id: string;
