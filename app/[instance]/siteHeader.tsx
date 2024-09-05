@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Search from "@/components/search";
 import Image from "next/image";
-import { Globals, Header } from "@/app/lib/types";
+import { Globals, Header, ProductionSlug } from "@/app/lib/types";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { io } from "socket.io-client";
@@ -30,22 +30,36 @@ export default function SiteHeader({ common, instanceId, clientConfig }: HeaderP
   const { smallLogo, largeLogo, links: headerLinks = [] } = header;
 
   useEffect(() => {
-    function onCmsUpdated(values: any) {
+    function onStageUpdated(values: any) {
       console.log("CMS Updated", values);
+      if (values?.instanceId !== instanceId) {
+        // Ignore updates from other instances
+        return;
+      }
+      console.log("CMS Updated - clearing cache");
       if (values?.pageId) {
         clearCache(values.pageId);
       } else {
-        clearCache("site");
+        clearCache(instanceId);
+      }
+    }
+    function onPublish(values: any) {
+      console.log("Site Published", values);
+      if (instanceId === ProductionSlug) {
+        console.log("Published - Clearing cache");
+        clearCache(instanceId);
       }
     }
     socket.emit("ContentSite-Join", clientConfig.siteId);
-    socket.on("StageUpdated", onCmsUpdated);
+    socket.on("StageUpdated", onStageUpdated);
+    socket.on("Publish", onPublish);
 
     return () => {
       socket.emit("ContentSite-Leave", clientConfig.siteId);
-      socket.off(clientConfig.siteId, onCmsUpdated);
+      socket.off(clientConfig.siteId, onStageUpdated);
+      socket.off(clientConfig.siteId, onPublish);
     };
-  }, [clientConfig.siteId]);
+  }, [clientConfig.siteId, instanceId]);
 
   const selectedCss = "block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 text-sky-500 before:bg-sky-500";
   const blankCss = "block w-full pl-3.5 before:pointer-events-none before:absolute before:left-0.5 before:top-1/2 before:h-0.5 before:w-1.5 before:-translate-y-1/2 text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-900 hover:before:block";
