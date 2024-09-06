@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import OnThisPage from "@/components/onThisPage";
 import PageFoot from "@/components/pageFoot";
 import Section from "@/components/section";
@@ -48,8 +48,28 @@ export default async function Body({ params }: IBody) {
   );
 }
 
-export const metadata: Metadata = {
-  description: "Custom Description",
-};
+export interface NameValuePair {
+  name: string;
+  value: string;
+}
+
+export async function generateMetadata({ params }: IBody, parent: ResolvingMetadata): Promise<Metadata> {
+  if (params.slug === "guide") return { title: "Guide", description: "Style Guide" };
+  const page = await getPage(params.slug, params.instance);
+  const { content } = page;
+  const { extendedProperties } = content;
+  const parentMeta = await parent;
+  const description = extendedProperties?.find((p: NameValuePair) => p.name === "description")?.value || parentMeta.description;
+  const keywords = extendedProperties?.find((p: NameValuePair) => p.name === "keywords")?.value || parentMeta.keywords;
+  const title = extendedProperties?.find((p: NameValuePair) => p.name === "title")?.value || page.title;
+  const robots = extendedProperties?.find((p: NameValuePair) => p.name === "robots")?.value || "index, follow";
+
+  return {
+    title,
+    description,
+    keywords,
+    robots,
+  };
+}
 
 type IBody = { params: { slug: string; instance: string } };
