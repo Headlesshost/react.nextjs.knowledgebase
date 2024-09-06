@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import LeftNav from "@/components/leftNav";
 import SiteHeader from "./siteHeader";
 import SiteFooter from "./siteFooter";
@@ -30,3 +31,8 @@ export default async function Layout({ children, params }: { children: React.Rea
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Knowledgebase",
+  description: "Knowledgebase",
+};
