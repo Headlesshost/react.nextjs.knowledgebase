@@ -56,13 +56,12 @@ export interface NameValuePair {
 export async function generateMetadata({ params }: IBody, parent: ResolvingMetadata): Promise<Metadata> {
   if (params.slug === "guide") return { title: "Guide", description: "Style Guide" };
   const page = await getPage(params.slug, params.instance);
-  const { content } = page;
-  const { extendedProperties } = content;
+
   const parentMeta = await parent;
-  const description = extendedProperties?.find((p: NameValuePair) => p.name === "description")?.value || parentMeta.description;
-  const keywords = extendedProperties?.find((p: NameValuePair) => p.name === "keywords")?.value || parentMeta.keywords;
-  const title = extendedProperties?.find((p: NameValuePair) => p.name === "title")?.value || page.title;
-  const robots = extendedProperties?.find((p: NameValuePair) => p.name === "robots")?.value || "index, follow";
+  const description = page?.content?.extendedProperties?.find((p: NameValuePair) => p.name === "description")?.value || parentMeta.description;
+  const keywords = page?.content?.extendedProperties?.find((p: NameValuePair) => p.name === "keywords")?.value || parentMeta.keywords;
+  const title = page?.content?.extendedProperties?.find((p: NameValuePair) => p.name === "title")?.value || page.title;
+  const robots = page?.content?.extendedProperties?.find((p: NameValuePair) => p.name === "robots")?.value || "index, follow";
 
   return {
     title,
