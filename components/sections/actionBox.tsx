@@ -2,7 +2,11 @@ import Link from "next/link";
 import { NavigationLink, Section } from "@/app/lib/types";
 
 interface ActionBoxSection extends Section {
-  link: NavigationLink;
+  content: {
+    title: string;
+    link: NavigationLink;
+    content: string;
+  };
 }
 
 interface ActionBoxProps {
@@ -10,7 +14,7 @@ interface ActionBoxProps {
 }
 
 const ActionBox: React.FC<ActionBoxProps> = ({ section }) => {
-  const { link, title, content } = section;
+  const { link, title, content } = section?.content || {};
   const linkLabel = link?.title;
 
   return (

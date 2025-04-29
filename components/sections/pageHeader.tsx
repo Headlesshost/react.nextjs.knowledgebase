@@ -5,10 +5,13 @@ import React from "react";
 import { Section } from "@/app/lib/types";
 
 interface PageHeaderSection extends Section {
-  introduction: string | undefined;
-  authorSelect: string;
-  parent: string | undefined;
-  created: string | undefined;
+  content: {
+    introduction: string | undefined;
+    authorSelect: string;
+    parent: string | undefined;
+    created: string | undefined;
+    title: string | undefined;
+  };
 }
 
 interface PageHeaderProps {
@@ -17,7 +20,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader: React.FC<PageHeaderProps> = async ({ section, instanceId }) => {
-  const { introduction, authorSelect, parent, title, created } = section;
+  const { introduction, authorSelect, parent, title, created } = section?.content || {};
   const authors = await getAuthors(instanceId);
   const author = authors?.result?.find((a) => a.cid === authorSelect);
 

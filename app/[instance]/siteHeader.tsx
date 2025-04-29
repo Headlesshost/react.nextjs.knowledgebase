@@ -25,9 +25,9 @@ const socket = io("https://api.headlesshost.com");
 export default function SiteHeader({ common, instanceId, clientConfig }: HeaderProps) {
   const [showNav, setShowNav] = useState(false);
   const pathname = usePathname();
-  const { globals = {}, header = { smallLogo: undefined, largeLogo: undefined, links: [] } } = common;
-  const { links = [] } = globals;
-  const { smallLogo, largeLogo, links: headerLinks = [] } = header;
+  const { globals, header } = common;
+  const { links = [] } = globals?.content || {};
+  const { smallLogo, largeLogo, links: headerLinks = [] } = header?.content || {};
 
   useEffect(() => {
     function onStageUpdated(values: any) {

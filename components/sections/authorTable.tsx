@@ -3,7 +3,9 @@ import { getAuthors } from "@/app/lib/api";
 import Image from "next/image";
 
 interface AuthorTableSection extends Section {
-  title: string;
+  content: {
+    title: string;
+  };
 }
 
 interface AuthorTableProps {

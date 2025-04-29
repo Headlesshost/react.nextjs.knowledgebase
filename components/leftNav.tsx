@@ -17,11 +17,11 @@ const LeftNav: React.FC<LeftNavProps> = ({ globals, instanceId }) => {
 
   return (
     <div className="hidden lg:relative lg:block lg:flex-none">
-      {globals?.links && (
+      {globals?.content?.links && (
         <div className="sticky -ml-0.5 w-64 overflow-x-hidden pl-0.5">
           <nav className="text-sm">
             <ul className="space-y-9">
-              {globals?.links.map((item) => (
+              {globals?.content?.links.map((item) => (
                 <li key={item.group}>
                   <h2 className="font-display font-semibold text-slate-900">{item.group}</h2>
                   <ul className="mt-4 space-y-4 border-slate-200">
