@@ -4,7 +4,10 @@ import { FormEvent } from "react";
 import { useState } from "react";
 
 interface ContactFormSection extends Section {
-  introduction: string;
+  content: {
+    introduction: string;
+    title: string;
+  };
 }
 
 interface ContactFormProps {
@@ -13,7 +16,7 @@ interface ContactFormProps {
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ section, siteId }) => {
-  const { introduction, title } = section;
+  const { introduction, title } = section?.content || {};
   const [sent, setSent] = useState(false);
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

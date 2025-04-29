@@ -1,8 +1,6 @@
 export interface Section {
   id: string;
   type: string;
-  title: string | undefined;
-  content: any;
 }
 
 export interface Heading {
@@ -22,13 +20,17 @@ export interface LinkGroup {
 }
 
 export interface Globals {
-  links?: LinkGroup[];
+  content: {
+    links?: LinkGroup[];
+  };
 }
 
 export interface Header {
-  smallLogo: ImageDetails;
-  largeLogo: ImageDetails;
-  links: NavigationLink[];
+  content: {
+    smallLogo: ImageDetails;
+    largeLogo: ImageDetails;
+    links: NavigationLink[];
+  };
 }
 
 export interface PagedResponse<T> {
@@ -41,15 +43,13 @@ export interface PagedResponse<T> {
 export interface Author {
   id: string;
   cid: string;
-  content: AuthorContent;
-}
-
-export interface AuthorContent {
-  name: string;
-  email: string;
-  role: string;
-  phone: string;
-  image: ImageDetails;
+  content: {
+    name: string;
+    email: string;
+    role: string;
+    phone: string;
+    image: ImageDetails;
+  };
 }
 
 export interface ImageDetails {

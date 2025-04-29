@@ -4,9 +4,11 @@ import { Section } from "@/app/lib/types";
 import { CopyBlock, dracula } from "react-code-blocks";
 
 interface CodeBlockSection extends Section {
-  code: string;
-  language: string;
-  showLineNumbers: boolean;
+  content: {
+    code: string;
+    language: string;
+    showLineNumbers: boolean;
+  };
 }
 
 interface CodeBlockProps {
@@ -14,9 +16,10 @@ interface CodeBlockProps {
 }
 
 const CodeDisplay: React.FC<CodeBlockProps> = ({ section }) => {
+  const { code = "", language = "javascript", showLineNumbers = false } = section?.content || {};
   return (
     <div className="mb-14">
-      <CopyBlock text={section?.code} language={section?.language} showLineNumbers={section?.showLineNumbers} theme={dracula} codeBlock={true} />
+      <CopyBlock text={code} language={language} showLineNumbers={showLineNumbers} theme={dracula} codeBlock={true} />
     </div>
   );
 };

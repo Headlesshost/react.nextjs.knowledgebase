@@ -2,7 +2,9 @@ import { NavigationLink, Section } from "@/app/lib/types";
 import Link from "next/link";
 
 interface NavLinkSection extends Section {
-  link: NavigationLink;
+  content: {
+    link: NavigationLink;
+  };
 }
 
 interface NavLinkProps {
@@ -11,7 +13,7 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ section }) => {
   if (!section) return null;
-  const { link } = section;
+  const { link } = section?.content || {};
   const { title, slug, target } = link;
   return (
     <div className="mb-6">
